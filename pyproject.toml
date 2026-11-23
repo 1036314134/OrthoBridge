@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orthobridge"
+version = "0.1.0"
+description = "OrthoBridge: Drift-Free Orthogonal Gauss-Markov Bridging with Exact Branch-and-Bound Indexing for Time Series Imputation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24,<3",
+]
+
+[project.optional-dependencies]
+baselines = [
+    "scipy>=1.10",
+    "threadpoolctl>=3.1",
+]
+neural = [
+    "scipy>=1.10",
+    "torch>=2.1",
+    "pypots>=0.8",
+]
+forecast = [
+    "torch>=2.1",
+    "chronos-forecasting>=2.0",
+    "timesfm",
+    "uni2ts",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

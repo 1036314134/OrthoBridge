@@ -1,0 +1,47 @@
+{
+  "experiment_id": "orthobridge-benchmark-20datasets",
+  "window_length": 512,
+  "split_ratio": "70/10/20",
+  "modes": ["block", "tail"],
+  "rates": [0.1, 0.2, 0.3, 0.4, 0.5],
+  "test_seeds": [42, 43, 44, 45, 46],
+  "validation_seed": 42,
+  "methods": [
+    "ortho_calibrated",
+    "linear",
+    "seasonal",
+    "hankel_softimpute",
+    "graph_laplacian",
+    "observed_knn",
+    "kdtree_knn",
+    "seasonal_knn",
+    "brits",
+    "csdi",
+    "saits",
+    "imputeformer",
+    "timemixer",
+    "helix"
+  ],
+  "orthobridge_hyperparameters": {
+    "context_size": 32,
+    "anchor_window": 4,
+    "anchor_decay": 0.45,
+    "k_pairs": 16,
+    "k": 8,
+    "temperature": 1.0,
+    "compatibility_weight": 1.0,
+    "leaf_size": 16,
+    "paa_block": 16,
+    "seasonal_reg": 2.0,
+    "replay_weight": 0.35,
+    "replay_horizon": 48,
+    "replay_windows": 3,
+    "include_null_candidate": true,
+    "null_penalty": 0.05,
+    "calibrated_shrinkage": {
+      "short": 0.25,
+      "long_internal": 0.75,
+      "long_edge": 1.0
+    }
+  }
+}

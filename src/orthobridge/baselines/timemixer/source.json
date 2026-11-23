@@ -1,0 +1,123 @@
+{
+  "method": "timemixer",
+  "repository": "https://github.com/kwuking/TimeMixer",
+  "revision": "e24610583b36fdd8c76cc17a8df4e65759a5f460",
+  "archive_sha256": "7287f8f5f21b405d6985d47ac45aaf846cf8a59882ddc3fc8fb5caf9335295d3",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "path": "README.md",
+      "sha256": "38f3eeafef388f3e67b23c403d93937272f5403e97c5cfec3bfdef86774e3eda",
+      "bytes": 13159
+    },
+    {
+      "path": "layers/AutoCorrelation.py",
+      "sha256": "35fc23e552419a53ebf12de5eb39a276aeb379f3f49ad5cf85ad0527a8c18feb",
+      "bytes": 6440
+    },
+    {
+      "path": "layers/Autoformer_EncDec.py",
+      "sha256": "48745b4bb647355e9845792a855df9c59fd7df7fcc664c765351fec390c4073e",
+      "bytes": 6831
+    },
+    {
+      "path": "layers/Conv_Blocks.py",
+      "sha256": "25c80a3f21bfcd403e9b3672cb1d3639b19e24d156e791060754b9ad32b90f3f",
+      "bytes": 2348
+    },
+    {
+      "path": "layers/DWT_Decomposition.py",
+      "sha256": "365356b4017ff144e92e655c24631bd422ec066741f5130fb6dd9e6f1a186e91",
+      "bytes": 47862
+    },
+    {
+      "path": "layers/Embed.py",
+      "sha256": "ab492ea2f68459bbcf3cbffdd1beb75b24d0d70248d017a313a3b470316aaa2b",
+      "bytes": 9579
+    },
+    {
+      "path": "layers/FourierCorrelation.py",
+      "sha256": "457afe4aa2a8ececf50bc359840edb3c9ed455cb02748b69fd01488215e186ca",
+      "bytes": 7452
+    },
+    {
+      "path": "layers/SelfAttention_Family.py",
+      "sha256": "34026dd7d5644a2e1dab912f2bb661c91d458015796133e681f40b98fbc10cfd",
+      "bytes": 12070
+    },
+    {
+      "path": "layers/StandardNorm.py",
+      "sha256": "cc1c0bc65b7b094bbe83f988fb05b86272a59638c030c3781aa52ce8880379df",
+      "bytes": 2183
+    },
+    {
+      "path": "layers/Transformer_EncDec.py",
+      "sha256": "7b26f4459735c341f161011f6bc24b9deb8ecc3bcf61e4f15431998272a44fb4",
+      "bytes": 4929
+    },
+    {
+      "path": "layers/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "models/TimeMixer.py",
+      "sha256": "817d62f4aac54c8566e560f6d3785856e31c8ee51460279ee3d0a4823f11d4be",
+      "bytes": 20663
+    },
+    {
+      "path": "models/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "2b7b6434c94f0e74d68ce788eb0ec25a7eb8581991f167f379558a10f21171b9",
+      "bytes": 279
+    },
+    {
+      "path": "utils/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "utils/data_analysis.py",
+      "sha256": "4176dc3ebb06988635085a397021d3b264056fc4251878b60abeee5b8aa94d69",
+      "bytes": 2778
+    },
+    {
+      "path": "utils/losses.py",
+      "sha256": "d7f924f9abdf9dbbf097b60329a25ad727b163111014954ebf5856370a1aa116",
+      "bytes": 3459
+    },
+    {
+      "path": "utils/m4_summary.py",
+      "sha256": "bfc7ba06736c3919b4542b0e68a15280642d80989a7f837132121136e8a4e8a7",
+      "bytes": 6174
+    },
+    {
+      "path": "utils/masking.py",
+      "sha256": "02f453e52cfaec65e34132923add80e7132f188706680fa86d7bd884976e09ef",
+      "bytes": 832
+    },
+    {
+      "path": "utils/metrics.py",
+      "sha256": "09e243e50baa6373286d3fe9954ab99075fa254e310b99769318b666ab92806a",
+      "bytes": 921
+    },
+    {
+      "path": "utils/timefeatures.py",
+      "sha256": "2414683a009c1bc0ffe8306aeca00800f95f76dc485db8121c1fc36ae87a7971",
+      "bytes": 4276
+    },
+    {
+      "path": "utils/tools.py",
+      "sha256": "5a16efe58607a5ac2da5694c9297cbffb7c314a16e746de028760ea822ff9376",
+      "bytes": 4289
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "experiment_id": "orthobridge-ablation-and-efficiency",
+  "diagnostic_datasets": [
+    "exchange_rate",
+    "m4_daily",
+    "fev_solar_with_weather_1h",
+    "seattle_loop_hourly",
+    "gift_bizitobs_application",
+    "monash_kdd_cup_2018"
+  ],
+  "ablation_methods": [
+    "observed_knn",
+    "seasonal",
+    "ortho_base",
+    "ortho_top1_hard",
+    "ortho_fixed",
+    "ortho_calibrated"
+  ],
+  "ablation_modes": ["block", "tail", "point"],
+  "ablation_rates": [0.1, 0.2, 0.3, 0.4, 0.5],
+  "efficiency_rate": 0.3,
+  "efficiency_repeats": 5
+}

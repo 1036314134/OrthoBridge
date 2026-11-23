@@ -1,0 +1,19 @@
+{
+  "experiment_id": "orthobridge-downstream-forecast",
+  "context_length": 512,
+  "forecast_horizon": 96,
+  "forecasters": {
+    "chronos2": "amazon/chronos-2",
+    "timesfm3": "google/timesfm-2.5-200m-pytorch",
+    "moirai2_small": "Salesforce/moirai-2.0-R-small"
+  },
+  "natural_missing_datasets": [
+    "monash_kdd_cup_2018",
+    "fev_kdd_cup_2022_30t",
+    "fev_ercot_1h",
+    "australian_wind_farms_minutely",
+    "lotsa_beijing_air_quality"
+  ],
+  "supplemental_test_stride": 608,
+  "max_natural_origins_per_dataset": 30
+}

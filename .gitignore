@@ -1,0 +1,30 @@
+# Local Chinese documentation at every depth
+README.zh-CN.md
+
+# Bytecode and packaging artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+
+# Virtual environments and caches
+.venv/
+venv/
+.pytest_cache/
+.cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environment overrides and run outputs
+.env
+.env.*
+!.env.example
+/configs/*.local.json
+/configs/*.local.yaml
+/outputs/
+/experiments/
+/papers/
+/tests/
+/docs/
