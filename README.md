@@ -167,7 +167,7 @@ python scripts/run_ablation_and_efficiency.py \
 
 ### 3. Downstream & Real-Missingness 96-Step Forecasting (Sections 6.5 & 6.6)
 
-After installing `.[forecast]` (and having HuggingFace access or local model paths configured in `configs/downstream_forecast.json` for `amazon/chronos-2`, `google/timesfm-2.5-200m-pytorch`, and `Salesforce/moirai-2.0-R-small`), run downstream 96-step forecasting:
+Install `.[forecast]` and use the default Hugging Face checkpoints (`amazon/chronos-2`, `google/timesfm-3.0-pytorch`, and `Salesforce/moirai-2.0-R-small`) or set local model paths in `configs/downstream_forecast.json`. The TimesFM 3.0 results use `timesfm==3.0.2` and checkpoint revision `43046b85ec22d584a13f8098c2ed39c889e129c2`.
 
 ```bash
 # Section 6.6: Natural sensor missingness (zero artificial masking)

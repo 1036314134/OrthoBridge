@@ -4,7 +4,7 @@
   "forecast_horizon": 96,
   "forecasters": {
     "chronos2": "amazon/chronos-2",
-    "timesfm3": "google/timesfm-2.5-200m-pytorch",
+    "timesfm3": "google/timesfm-3.0-pytorch",
     "moirai2_small": "Salesforce/moirai-2.0-R-small"
   },
   "natural_missing_datasets": [

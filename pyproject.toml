@@ -25,7 +25,7 @@ neural = [
 forecast = [
     "torch>=2.1",
     "chronos-forecasting>=2.0",
-    "timesfm",
+    "timesfm==3.0.2",
     "uni2ts",
 ]
 

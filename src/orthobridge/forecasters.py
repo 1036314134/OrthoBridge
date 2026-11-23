@@ -6,7 +6,7 @@ import numpy as np
 
 DEFAULT_MODEL_IDS = {
     "chronos2": "amazon/chronos-2",
-    "timesfm3": "google/timesfm-2.5-200m-pytorch",
+    "timesfm3": "google/timesfm-3.0-pytorch",
     "moirai2_small": "Salesforce/moirai-2.0-R-small",
 }
 
@@ -43,21 +43,18 @@ class FoundationForecaster:
                 self.model_id, device_map=self.device, torch_dtype=torch.float32
             )
         elif self.model_key == "timesfm3":
-            import timesfm
+            from timesfm3.torch.timesfm3_forecaster import TimesFM3Forecaster
 
-            if hasattr(timesfm, "TimesFM_2p5_200M_torch"):
-                tfm = timesfm.TimesFM_2p5_200M_torch.from_pretrained(self.model_id)
-                tfm.compile(
-                    timesfm.ForecastConfig(
-                        max_context=512,
-                        max_horizon=self.horizon,
-                        normalize_inputs=True,
-                        use_continuous_quantile_head=True,
-                    )
-                )
-                self._pipeline = tfm
-            else:
-                raise ImportError("Installed timesfm version does not expose TimesFM_2p5_200M_torch")
+            revision = None
+            if self.model_id == DEFAULT_MODEL_IDS["timesfm3"]:
+                revision = "43046b85ec22d584a13f8098c2ed39c889e129c2"
+            pipeline = TimesFM3Forecaster.from_pretrained(
+                self.model_id, device=self.device, revision=revision
+            )
+            if pipeline.config.quantiles[pipeline.config.median_quantile_index] != 0.5:
+                raise ValueError("TimesFM3 must return the median forecast")
+            pipeline.model.eval().requires_grad_(False)
+            self._pipeline = pipeline
         else:
             from uni2ts.model.moirai2 import Moirai2Forecast, Moirai2Module
 
@@ -96,10 +93,10 @@ class FoundationForecaster:
                     )
                     med = np.asarray(quantiles, dtype=np.float64).reshape(len(batch), self.horizon)
                 elif self.model_key == "timesfm3":
-                    point_forecast, _ = self._pipeline.forecast(
-                        horizon=self.horizon, inputs=[row for row in batch]
+                    forecasts = self._pipeline.predict_batch(
+                        contexts=list(batch), horizon=self.horizon
                     )
-                    med = np.asarray(point_forecast, dtype=np.float64).reshape(len(batch), self.horizon)
+                    med = np.stack([output.forecast for output in forecasts]).astype(np.float64)
                 else:
                     past = torch.as_tensor(batch[:, :, None], dtype=torch.float32, device=self.device)
                     obs = torch.ones_like(past, dtype=torch.bool)
